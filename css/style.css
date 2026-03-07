@@ -1,20 +1,21 @@
 /*@media only screen and (min-width: 1600px) {
-  /*BODY*/
+  
+/* BODY */
 
 .body {
   background-image: url("../images/body/background.png");
   background-size: 1583px;
   background-repeat: repeat-y;
   background-color: black;
-  justify-content: center;
+  align-items: center;
   display: flex;
+  flex-direction: column;
   background-position: center;
   margin-bottom: 0px;
 }
 
 .header {
   width: 1583px;
-  display: flex;
 }
 
 * {
@@ -22,19 +23,22 @@
   padding: 0px;
 }
 
-/*DIVS*/
+/* DIVS */
 
+/* IMAGES INSIDE NAVIGATION */
 .divimg {
-  width: 250px;
+  width: 240px;
   height: 90px;
+  display: block;
 }
 
+/* NAVIGATION BLOCKS */
 .div {
   border: none;
   height: 90px;
-  width: 250px;
+  width: 240px;
   top: 10px;
-  padding-left: 20px;
+  margin-left: 20px;
   position: absolute;
 }
 
@@ -49,25 +53,28 @@
 .div3 {
   border: none;
   height: 90px;
-  width: 250px;
+  width: 240px;
   top: 10px;
   position: absolute;
 }
 
+/* CONTAINER WITH ALL THE NAVIGATION BLOCKS */
 .mycontainer {
   display: grid;
-  grid-template-columns: 18.5% 17.2% 29.8% 17.2% 0%;
+  grid-template-columns: 18.5% 17.2% 29.8% 17.2% 18.5%;
+  width: 1583px;
+  position: relative;
+  background-image: url("../images/body/header.png");
 }
 
+/* TEXT BLOCK */
 .div4 {
   border: none;
-  position: absolute;
   width: 920px;
-  margin-top: 270px;
   padding: 2%;
 }
 
-/* CONTAINERS IN INDEX.HTML */
+/* DIV4 CONTAINERS IN INDEX.HTML */
 
 .cont1 {
   margin-top: 15%;
@@ -117,7 +124,7 @@
   margin-bottom: 20%;
 }
 
-/* CONTAINERS IN DEVLOG 0.1 */
+/* DIV4 CONTAINERS IN DEVLOG 0.1 */
 
 .dev_01_1 {
   display: grid;
@@ -147,9 +154,7 @@
   grid-template-columns: 45% 55%;
 }
 
-/*}
-
-/*TEXT*/
+/* TEXT */
 
 @font-face {
   font-family: tcb;
@@ -168,4 +173,75 @@
   color: white;
   font-family: tcb;
   margin-bottom: 4%;
+}
+
+/* Kod dla tabletów i telefonów */
+@media only screen and (max-width: 1024px) {
+  /* BODY - tło musi się dopasować */
+  .body {
+    background-size: cover; /* Tło wypełnia cały ekran */
+    width: 100%;
+  }
+
+  .header {
+    width: 100%; /* Obrazek nagłówka dopasowuje się do szerokości */
+    height: auto;
+  }
+
+  /* NAWIGACJA - Zmieniamy układ na pionowy lub mniejszą siatkę */
+  .mycontainer {
+    width: 100%;
+    grid-template-columns: 1fr; /* Wszystkie przyciski jeden pod drugim */
+    height: auto;
+    background-size: cover;
+  }
+
+  .div,
+  .div2,
+  .div3 {
+    position: static; /* Wyłączamy absolute! Na komórce przyciski muszą "płynąć" */
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+  }
+
+  .divimg {
+    width: 100%; /* Obrazki przycisków skalują się do szerokości ekranu */
+    max-width: 240px; /* Ale nie będą większe niż oryginał */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* KONTENER TEKSTOWY */
+  .div4 {
+    width: 95%; /* Tekst zajmuje prawie całą szerokość ekranu */
+    padding: 5%;
+  }
+
+  /* SEKCJE Z TREŚCIĄ (cont1, cont2 itd.) */
+  /* Na telefonie dwie kolumny obok siebie (np. 55% i 45%) będą za ciasne */
+  .cont1,
+  .cont2,
+  .cont3,
+  .cont4,
+  .cont5,
+  .cont6,
+  .cont7,
+  .cont8,
+  .dev_01_1,
+  .dev_01_2,
+  .dev_01_3,
+  .dev_01_5 {
+    grid-template-columns: 1fr; /* Zmieniamy na jedną kolumnę */
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+  }
+
+  /* Obrazki w sekcjach */
+  .cont1 img,
+  .cont3 img {
+    width: 80% !important; /* Obrazki wyśrodkowane i nieco mniejsze */
+    margin: 20px auto;
+  }
 }
