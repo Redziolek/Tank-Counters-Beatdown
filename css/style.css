@@ -1,10 +1,8 @@
-/*@media only screen and (min-width: 1600px) {
-  
 /* BODY */
 
 .body {
   background-image: url("../images/body/background.png");
-  background-size: 1583px;
+  background-size: 100% auto;
   background-repeat: repeat-y;
   background-color: black;
   align-items: center;
@@ -15,7 +13,8 @@
 }
 
 .header {
-  width: 1583px;
+  width: 100%;
+  height: auto;
 }
 
 * {
@@ -175,51 +174,57 @@
   margin-bottom: 4%;
 }
 
-/* Kod dla tabletów i telefonów */
-@media only screen and (max-width: 1024px) {
-  /* BODY - tło musi się dopasować */
+@media only screen and (max-width: 1599px) {
+  /* Skalujemy body i tło */
   .body {
-    background-size: cover; /* Tło wypełnia cały ekran */
+    background-size: 100% auto;
     width: 100%;
   }
 
-  .header {
-    width: 100%; /* Obrazek nagłówka dopasowuje się do szerokości */
-    height: auto;
-  }
-
-  /* NAWIGACJA - Zmieniamy układ na pionowy lub mniejszą siatkę */
+  /* Kontener nawigacji - teraz elastyczny */
   .mycontainer {
-    width: 100%;
-    grid-template-columns: 1fr; /* Wszystkie przyciski jeden pod drugim */
-    height: auto;
-    background-size: cover;
+    width: 100vw; /* Zajmuje całą szerokość ekranu */
+    height: 15.8vw; /* Proporcjonalna wysokość (250px z 1583px to ok. 15.8%) */
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
-  .div,
-  .div2,
+  /* Przyciski - zmieniamy px na % lub vw, żeby "płynęły" z tłem */
+  .div {
+    width: 15vw;
+    height: 5.6vw;
+    top: 0.6vw; /* Odpowiednik 10px */
+    left: 1.2vw; /* Odpowiednik 20px */
+  }
+
+  .div2 {
+    width: 28vw;
+    height: 14vw;
+    top: 0.6vw;
+    left: 50%;
+    transform: translateX(-50%); /* Idealne centrowanie logo */
+  }
+
   .div3 {
-    position: static; /* Wyłączamy absolute! Na komórce przyciski muszą "płynąć" */
-    width: 90%;
-    margin: 10px auto;
-    height: auto;
+    width: 15vw;
+    height: 5.6vw;
+    top: 0.6vw;
+    right: 1.2vw; /* Trzyma się prawej krawędzi przy zwężaniu */
   }
 
+  /* Obrazki wewnątrz przycisków */
   .divimg {
-    width: 100%; /* Obrazki przycisków skalują się do szerokości ekranu */
-    max-width: 240px; /* Ale nie będą większe niż oryginał */
+    width: 100%;
     height: auto;
-    margin: 0 auto;
   }
 
-  /* KONTENER TEKSTOWY */
+  /* Główny blok tekstu */
   .div4 {
-    width: 95%; /* Tekst zajmuje prawie całą szerokość ekranu */
-    padding: 5%;
+    width: 90%; /* Zamiast 920px zajmuje 90% szerokości ekranu */
+    padding: 20px;
   }
 
-  /* SEKCJE Z TREŚCIĄ (cont1, cont2 itd.) */
-  /* Na telefonie dwie kolumny obok siebie (np. 55% i 45%) będą za ciasne */
+  /* Skalowanie sekcji z obrazkami (cont1-cont8) */
   .cont1,
   .cont2,
   .cont3,
@@ -227,21 +232,8 @@
   .cont5,
   .cont6,
   .cont7,
-  .cont8,
-  .dev_01_1,
-  .dev_01_2,
-  .dev_01_3,
-  .dev_01_5 {
-    grid-template-columns: 1fr; /* Zmieniamy na jedną kolumnę */
-    margin-top: 10%;
-    margin-bottom: 10%;
-    text-align: center;
-  }
-
-  /* Obrazki w sekcjach */
-  .cont1 img,
-  .cont3 img {
-    width: 80% !important; /* Obrazki wyśrodkowane i nieco mniejsze */
-    margin: 20px auto;
+  .cont8 {
+    width: 100%;
+    gap: 10px;
   }
 }
