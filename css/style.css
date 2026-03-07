@@ -1,78 +1,175 @@
-/* 1. Global Reset & Body */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Crucial for responsive padding */
-}
+/* BODY */
 
 .body {
   background-image: url("../images/body/background.png");
-  background-size: cover; /* 'cover' is usually better for responsiveness than '100% auto' */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
   background-color: black;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  background-position: center;
+  margin-bottom: 0px;
 }
 
-/* 2. Responsive Container & Navigation */
-.mycontainer {
-  display: flex;
-  flex-wrap: wrap; /* Allows items to drop to next line on small screens */
-  justify-content: center;
-  align-items: center;
+.header {
   width: 100%;
-  max-width: 1200px; /* Limits size on ultra-wide monitors */
-  padding: 10px;
-  background-image: url("../images/body/header.png");
-  background-size: cover;
-}
-
-/* Remove 'position: absolute' from these to let them flow naturally */
-.div, .div2, .div3 {
-  position: relative; 
   height: auto;
-  width: auto;
-  margin: 10px;
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* DIVS */
+
+/* IMAGES INSIDE NAVIGATION */
 .divimg {
-  max-width: 100%; /* Image won't exceed its container */
-  height: auto;    /* Maintains aspect ratio */
+  width: 240px;
+  height: 90px;
   display: block;
 }
 
-/* 3. Responsive Grid for Content */
-.cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8, 
-.dev_01_1, .dev_01_2, .dev_01_3, .dev_01_5 {
+/* NAVIGATION BLOCKS */
+.div {
+  border: none;
+  height: 90px;
+  width: 240px;
+  top: 10px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.div2 {
+  border: none;
+  height: 220px;
+  width: 450px;
+  top: 10px;
+  position: absolute;
+}
+
+.div3 {
+  border: none;
+  height: 90px;
+  width: 240px;
+  top: 10px;
+  position: absolute;
+}
+
+/* CONTAINER WITH ALL THE NAVIGATION BLOCKS */
+.mycontainer {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns by default */
-  gap: 20px;
-  width: 90%;
-  max-width: 920px;
-  margin: 5% auto;
+  grid-template-columns: 18.5% 17.2% 29.8% 17.2% 18.5%;
+  width: 1583px;
+  position: relative;
+  background-image: url("../images/body/header.png");
 }
 
-/* 4. THE MEDIA QUERY (The "Magic" Part) */
-@media (max-width: 768px) {
-  /* On mobile, stack everything in ONE column */
-  .cont1, .cont2, .cont3, .cont4, .cont5, .cont6, .cont7, .cont8,
-  .dev_01_1, .dev_01_2, .dev_01_3, .dev_01_5 {
-    grid-template-columns: 1fr; 
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-
-  .text {
-    font-size: 1.2rem; /* Scale down text slightly */
-  }
-
-  .mycontainer {
-    flex-direction: column; /* Stack nav items vertically */
-  }
+/* TEXT BLOCK */
+.div4 {
+  border: none;
+  width: 920px;
+  padding: 2%;
 }
 
+/* DIV4 CONTAINERS IN INDEX.HTML */
 
+.cont1 {
+  margin-top: 15%;
+  margin-bottom: 20%;
+  display: grid;
+  grid-template-columns: 55% 45%;
+}
 
+.cont2 {
+  grid-template-columns: 50% 50%;
+}
+
+.cont3 {
+  grid-template-columns: 55% 45%;
+}
+
+.cont4 {
+  grid-template-columns: 50% 50%;
+}
+
+.cont5 {
+  grid-template-columns: 50% 50%;
+}
+
+.cont6 {
+  grid-template-columns: 50% 50%;
+}
+
+.cont7 {
+  grid-template-columns: 50% 50%;
+}
+
+.cont8 {
+  margin-bottom: 4%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.cont2,
+.cont3,
+.cont4,
+.cont5,
+.cont6,
+.cont7 {
+  display: grid;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+/* DIV4 CONTAINERS IN DEVLOG 0.1 */
+
+.dev_01_1 {
+  display: grid;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  grid-template-columns: 45% 55%;
+}
+
+.dev_01_2 {
+  display: grid;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  grid-template-columns: 55% 45%;
+}
+
+.dev_01_3 {
+  display: grid;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  grid-template-columns: 40% 60%;
+}
+
+.dev_01_5 {
+  display: grid;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  grid-template-columns: 45% 55%;
+}
+
+/* TEXT */
+
+@font-face {
+  font-family: tcb;
+  src: url(../fonts/tcb.ttf);
+}
+
+.text {
+  color: white;
+  font-family: tcb;
+  font-size: x-large;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.text1 {
+  color: white;
+  font-family: tcb;
+  margin-bottom: 4%;
+}
