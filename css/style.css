@@ -61,7 +61,7 @@
 .mycontainer {
   display: grid;
   grid-template-columns: 18.5% 17.2% 29.8% 17.2% 18.5%;
-  width: 1583px;
+  width: 100%;
   position: relative;
   background-image: url("../images/body/header.png");
 }
