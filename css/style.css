@@ -1,175 +1,354 @@
-/* BODY */
-
-.body {
-  background-image: url("../images/body/background.png");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  background-color: black;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  background-position: center;
-  margin-bottom: 0px;
+/* RESET & GLOBAL BOX-SIZING */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.header {
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
   width: 100%;
-  height: auto;
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-/* DIVS */
-
-/* IMAGES INSIDE NAVIGATION */
-.divimg {
-  width: 240px;
-  height: 90px;
-  display: block;
-}
-
-/* NAVIGATION BLOCKS */
-.div {
-  border: none;
-  height: 90px;
-  width: 240px;
-  top: 10px;
-  margin-left: 20px;
-  position: absolute;
-}
-
-.div2 {
-  border: none;
-  height: 220px;
-  width: 450px;
-  top: 10px;
-  position: absolute;
-}
-
-.div3 {
-  border: none;
-  height: 90px;
-  width: 240px;
-  top: 10px;
-  position: absolute;
-}
-
-/* CONTAINER WITH ALL THE NAVIGATION BLOCKS */
-.mycontainer {
-  display: grid;
-  grid-template-columns: 18.5% 17.2% 29.8% 17.2% 18.5%;
-  width: 100%;
-  position: relative;
-  background-image: url("../images/body/header.png");
-}
-
-/* TEXT BLOCK */
-.div4 {
-  border: none;
-  width: 58%;
-  padding: 2%;
-}
-
-/* DIV4 CONTAINERS IN INDEX.HTML */
-
-.cont1 {
-  margin-top: 15%;
-  margin-bottom: 20%;
-  display: grid;
-  grid-template-columns: 55% 45%;
-}
-
-.cont2 {
-  grid-template-columns: 50% 50%;
-}
-
-.cont3 {
-  grid-template-columns: 55% 45%;
-}
-
-.cont4 {
-  grid-template-columns: 50% 50%;
-}
-
-.cont5 {
-  grid-template-columns: 50% 50%;
-}
-
-.cont6 {
-  grid-template-columns: 50% 50%;
-}
-
-.cont7 {
-  grid-template-columns: 50% 50%;
-}
-
-.cont8 {
-  margin-bottom: 4%;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.cont2,
-.cont3,
-.cont4,
-.cont5,
-.cont6,
-.cont7 {
-  display: grid;
-  margin-top: 20%;
-  margin-bottom: 20%;
-}
-
-/* DIV4 CONTAINERS IN DEVLOG 0.1 */
-
-.dev_01_1 {
-  display: grid;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  grid-template-columns: 45% 55%;
-}
-
-.dev_01_2 {
-  display: grid;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  grid-template-columns: 55% 45%;
-}
-
-.dev_01_3 {
-  display: grid;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  grid-template-columns: 40% 60%;
-}
-
-.dev_01_5 {
-  display: grid;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  grid-template-columns: 45% 55%;
-}
-
-/* TEXT */
-
+/* FONTS */
 @font-face {
   font-family: tcb;
   src: url(../fonts/tcb.ttf);
 }
 
+/* BODY */
+.body {
+  background-image: url("../images/body/background.png");
+  background-size: 1600px auto;
+  background-repeat: repeat-y;
+  background-color: black;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-position: top center;
+  margin-bottom: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* NAVIGATION & HEADER */
+nav, header {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CONTAINER WITH ALL THE NAVIGATION BLOCKS */
+.mycontainer {
+  display: grid;
+  grid-template-columns: 18.3% 17% 29.4% 17% 18.3%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: none;
+}
+
+.mycontainer > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 44%;
+  width: 100%;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.mycontainer > a:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.mycontainer > a:active {
+  transform: translateY(1px);
+  filter: brightness(0.9);
+}
+
+/* 3rd item is the middle logo button linking to home */
+.mycontainer > a:nth-child(3) {
+  height: 96%;
+}
+
+.mycontainer > a:nth-child(3):hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+}
+
+.div,
+.div3 {
+  border: none;
+  width: 100%;
+  height: 100%;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.div2 {
+  border: none;
+  width: 100%;
+  height: 100%;
+  position: static;
+  margin: 0;
+}
+
+.divimg {
+  max-width: 90%;
+  max-height: 75%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* CONTENT CONTAINER */
+.div4 {
+  border: none;
+  width: 100%;
+  max-width: 920px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* TEXT */
 .text {
   color: white;
   font-family: tcb;
-  font-size: x-large;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   margin-top: 3%;
   margin-bottom: 3%;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .text1 {
   color: white;
   font-family: tcb;
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
   margin-bottom: 4%;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+/* DIV4 CONTAINERS IN INDEX.HTML */
+.cont1,
+.cont2,
+.cont3,
+.cont4,
+.cont5,
+.cont6,
+.cont7,
+.cont8 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  margin-top: clamp(40px, 8vw, 160px);
+  margin-bottom: clamp(40px, 8vw, 160px);
+  width: 100%;
+}
+
+.cont1,
+.cont3 {
+  grid-template-columns: 55% 45%;
+}
+
+.cont8 {
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+/* Wrap icon groups inside containers */
+.cont2 p,
+.cont4 p,
+.cont5 p,
+.cont6 p,
+.cont7 p,
+.cont8 p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Screenshot comparison container at end of index.html */
+.div4 > div:last-child {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.div4 > div:last-child img {
+  width: 48% !important;
+  float: none !important;
+  height: auto;
+}
+
+/* DEVLOG CONTAINERS */
+.dev_01_1,
+.dev_01_2,
+.dev_01_3,
+.dev_01_4,
+.dev_01_5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.dev_01_1 {
+  grid-template-columns: 45% 55%;
+}
+
+.dev_01_2 {
+  grid-template-columns: 55% 45%;
+}
+
+.dev_01_3 {
+  grid-template-columns: 40% 60%;
+}
+
+.dev_01_4 {
+  grid-template-columns: 60% 40%;
+}
+
+.dev_01_5 {
+  grid-template-columns: 45% 55%;
+}
+
+/* IMAGES & MEDIA */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Preserve original height for action buttons */
+img[height="32px"] {
+  height: 32px !important;
+  width: auto !important;
+  max-width: 90%;
+}
+
+/* FORM ELEMENTS */
+textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  font-family: tcb, sans-serif;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Tablets and small laptops (<= 860px) */
+@media (max-width: 860px) {
+  .cont1,
+  .cont2,
+  .cont3,
+  .cont4,
+  .cont5,
+  .cont6,
+  .cont7,
+  .cont8 {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .dev_01_1,
+  .dev_01_2,
+  .dev_01_3,
+  .dev_01_4,
+  .dev_01_5 {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .cont1 h1,
+  .cont2 h1,
+  .cont3 h1,
+  .cont4 h1,
+  .cont5 h1,
+  .cont6 h1,
+  .cont7 h1,
+  .cont8 h1 {
+    text-align: center !important;
+    margin-top: 0 !important;
+  }
+
+  /* Center standalone screenshots */
+  .cont1 img,
+  .cont3 img,
+  .dev_01_4 img,
+  .dev_01_5 img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Bottom screenshots stack cleanly */
+  .div4 > div:last-child {
+    flex-direction: column;
+  }
+
+  .div4 > div:last-child img {
+    width: 100% !important;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  .div4 {
+    padding: 12px;
+  }
+
+  .cont1,
+  .cont2,
+  .cont3,
+  .cont4,
+  .cont5,
+  .cont6,
+  .cont7,
+  .cont8 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  .mycontainer > a {
+    height: 48%;
+  }
+
+  .divimg {
+    max-width: 95%;
+    max-height: 80%;
+  }
 }
