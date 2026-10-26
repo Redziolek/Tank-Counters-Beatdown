@@ -254,6 +254,16 @@ textarea {
 
 /* RESPONSIVE MEDIA QUERIES */
 
+@media (max-width: 1024px) {
+  .text {
+    font-size: 1.25rem;
+  }
+
+  .text1 {
+    font-size: 1.65rem;
+  }
+}
+
 @media (max-width: 860px) {
   .div4 {
     width: 100%;
@@ -262,12 +272,12 @@ textarea {
   }
 
   .text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.4;
   }
 
   .text1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     line-height: 1.3;
   }
 
@@ -287,6 +297,22 @@ textarea {
     grid-template-columns: 1fr !important;
     margin-top: 35px !important;
     margin-bottom: 35px !important;
+  }
+
+  /* Mobile ordering: descriptions appear above their images */
+  .cont2 > div:first-child,
+  .cont4 > div:first-child,
+  .cont6 > div:first-child,
+  .cont8 > div:first-child {
+    order: 2;
+    margin-top: 15px;
+  }
+
+  .cont2 > div:last-child,
+  .cont4 > div:last-child,
+  .cont6 > div:last-child,
+  .cont8 > div:last-child {
+    order: 1;
   }
 
   /* Reset vertical alignment offsets on mobile */
@@ -324,12 +350,12 @@ textarea {
   }
 
   /* Wrap icons cleanly on mobile */
-  .cont2 p,
-  .cont4 p,
-  .cont5 p,
-  .cont6 p,
-  .cont7 p,
-  .cont8 p {
+  .cont2 p:not(.text),
+  .cont4 p:not(.text),
+  .cont5 p:not(.text),
+  .cont6 p:not(.text),
+  .cont7 p:not(.text),
+  .cont8 p:not(.text) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -358,6 +384,18 @@ textarea {
   }
 }
 
+@media (max-width: 520px) {
+  .text {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .text1 {
+    font-size: 1.2rem;
+    line-height: 1.25;
+  }
+}
+
 @media (max-width: 480px) {
   .div4 {
     padding: 12px;
@@ -370,6 +408,22 @@ textarea {
   .divimg {
     max-width: 95%;
     max-height: 80%;
+  }
+}
+
+@media (max-width: 380px) {
+  .div4 {
+    padding: 10px;
+  }
+
+  .text {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .text1 {
+    font-size: 1.05rem;
+    line-height: 1.2;
   }
 }
 
