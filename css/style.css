@@ -262,11 +262,21 @@ textarea {
   .text1 {
     font-size: 1.65rem;
   }
+
+  .divimg {
+    max-width: 82%;
+    max-height: 68%;
+  }
 }
 
 @media (max-width: 860px) {
   .body {
     background-size: 950px auto;
+  }
+
+  .divimg {
+    max-width: 80%;
+    max-height: 66%;
   }
 
   .div4 {
@@ -412,6 +422,11 @@ textarea {
     line-height: 1.25;
   }
 
+  .divimg {
+    max-width: 76%;
+    max-height: 62%;
+  }
+
   .div4 img[style*="width: 100%"],
   .div4 img[style*="width: 47%"],
   .cont1 img,
@@ -428,15 +443,6 @@ textarea {
 @media (max-width: 480px) {
   .div4 {
     padding: 12px;
-  }
-
-  .mycontainer > a {
-    height: 48%;
-  }
-
-  .divimg {
-    max-width: 95%;
-    max-height: 80%;
   }
 }
 
@@ -457,6 +463,11 @@ textarea {
   .text1 {
     font-size: 1.05rem;
     line-height: 1.2;
+  }
+
+  .divimg {
+    max-width: 72%;
+    max-height: 58%;
   }
 
   .div4 img[style*="width: 100%"],
